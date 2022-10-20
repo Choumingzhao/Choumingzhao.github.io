@@ -1,0 +1,9 @@
+name: Run grammer check on any .md files
+run-name: ${{ github.actor }} is checking all shell files🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+          - run: sudo add-apt-repository universe && sudo apt install python3-proselint
+          - run: find ${{ github.workspace }} -name '*.md' -type f | xargs proselint -
